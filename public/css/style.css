@@ -1,0 +1,23 @@
+.uniqcustom {
+    border: 3px rgb(126, 185, 225) solid;
+    border-radius: 3%;
+    box-shadow: 10px 10px 15px  rgba(0, 0, 0, 0.089);
+    padding: 20px 30px;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width:576px) {
+    * {
+        font-size: 13px;
+    }
+
+    .uniqcustom {
+        border: 3px rgb(126, 185, 225) solid;
+        border-radius: 15px;
+        box-shadow: 10px 10px 15px  rgba(0, 0, 0, 0.089);
+        width: 85%;
+        padding: 20px 30px;
+    }
+
+}
+
