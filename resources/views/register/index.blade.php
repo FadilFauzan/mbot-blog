@@ -2,9 +2,9 @@
 
 @section('container')
 <div class="d-flex justify-content-center">
-    <form action="/register" method="post" class="uniqcustom col-lg-6">
+    <form action="/register" method="post" class="uniqcustom col-12 col-lg-6 col-md-6 col-xl-5">
         @csrf
-        <h1 class="text-center mb-4 text-primary">Registration Form</h1>
+        <h1 class="text-center mb-4">Registration Form</h1>
 
         <!-- Name input -->
         <div class="form-floating mb-2">
@@ -56,7 +56,7 @@
 
         <!-- Submit button -->
         <div class="d-flex justify-content-end">
-            <button type="submit" name="register" class="btn btn-primary mb-4">Register</button>
+            <button type="submit" name="register" class="btn btn-secondary mb-4">Register</button>
         </div>
 
         <!-- Login buttons -->

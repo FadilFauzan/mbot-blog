@@ -33,7 +33,7 @@
                     <th scope="col">Username</th>
                     <th scope="col">Email</th>
                     <th scope="col">Join at</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Role</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -45,7 +45,7 @@
                     <td>{{ $user->username }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->created_at->format('d-m-Y') }}</td>
-                    <td>{{ $user->is_admin ? 'Admin' : 'Guest' }}</td>
+                    <td>{{ $user->is_admin ? 'Admin' : 'User' }}</td>
                     <td style="vertical-align: middle; text-align: center;">
                         <div class="d-flex justify-content-center gap-1">
                             <form action="/dashboard/admin/users/{{ $user->username }}" method="post" class="d-inline">

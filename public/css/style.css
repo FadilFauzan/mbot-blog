@@ -1,23 +1,40 @@
 .uniqcustom {
-    border: 3px rgb(126, 185, 225) solid;
+    background-color: aliceblue;
     border-radius: 3%;
     box-shadow: 10px 10px 15px  rgba(0, 0, 0, 0.089);
     padding: 20px 30px;
     margin-bottom: 30px;
 }
 
-@media screen and (max-width:576px) {
-    * {
-        font-size: 13px;
-    }
-
-    .uniqcustom {
-        border: 3px rgb(126, 185, 225) solid;
-        border-radius: 15px;
-        box-shadow: 10px 10px 15px  rgba(0, 0, 0, 0.089);
-        width: 85%;
-        padding: 20px 30px;
-    }
-
+body {
+    background-image: url('/img/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
+
+
+.gallery {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    padding: 25px 0 30px 0;
+}
+
+
+.thumbnail {
+    width: 50%;
+    margin: 0 5px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.thumbnail img {
+    width: 100%;
+    transition: all 1s ease;
+}
+
+.thumbnail img:hover {
+    transform: scale(1.1);
+}

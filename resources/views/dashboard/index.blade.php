@@ -16,9 +16,25 @@
     
     <div class="row align-items-md-stretch">
         <div class="h-100 p-5 text-white bg-dark rounded-3 col-lg-8 mb-3">
-            <h2>Hallo, {{ auth()->user()->name }}</h2>
-            <p>{{ auth()->user()->username }}</p>
-            <button class="btn btn-outline-light" type="button">Example button</button>
+            <h2>Welcome, {{ auth()->user()->name }}</h2>
+            <div class="content">
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <p>Here's some information about your account:</p>
+                        <ul>
+                            <li>Email : {{ auth()->user()->email }}</li>
+                            <li>Role : {{ auth()->user()->is_admin == 1 ? 'Administrator' : 'User' }}</li>
+                            <li>Last Login : September 23, 2023 10:30 AM</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://th.bing.com/th/id/R.35764bd1f5d8b1666e117e5d16e7d988?rik=Tjrj5MvcxuzZpA&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2017%2f05%2fCommunication-PNG-File.png&ehk=Vz%2fDLe%2fLr4XktZhciNBVQwjELUncCg8Hc4PslOPExSg%3d&risl=&pid=ImgRaw&r=0" class="image-fluid w-100">
+                    </div>
+                </div>
+                {{-- <a href="/dashboard/profile">
+                    <button class="btn btn-outline-light mt-4" type="button">Edit Profile</button>
+                </a> --}}
+            </div>
         </div>
     </div>
 

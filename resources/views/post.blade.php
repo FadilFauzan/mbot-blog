@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row justify-content-center mb-5">
-            <div class="col-md-8">
+            <div class="col-md-9 bg-white p-4 rounded">
                 <h2 class="mb-3">{{ $post->title }}</h2>
                 <small class="text-muted">
                     <p>By. <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a> in

@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="d-flex justify-content-center">
-    <form action="/login" method="post" class="uniqcustom col-10 col-lg-6 col-md-6 col-xl-5">
+    <form action="/login" method="post" class="uniqcustom col-12 col-lg-6 col-md-6 col-xl-5">
         @csrf
 
         @if (session()->has('status'))
@@ -25,7 +25,7 @@
             </div>
         @endif
 
-        <h2 class="text-center mb-4 text-primary">MBOT Blog</h2>
+        <h2 class="text-center mb-4">MBOT Blog</h2>
 
         <!-- Email input -->
         <div class="form-floating mb-2">
@@ -50,8 +50,6 @@
                 </div>
             @enderror
         </div>
-
-        <!-- Submit button -->
         
         <!-- 2 column grid layout for inline styling -->
         <div class="row mb-4">
@@ -73,7 +71,7 @@
 
         <!-- Submit button -->
         <div class="d-flex justify-content-end">
-            <button type="submit" name="login" class="btn btn-primary mb-3 col">Login</button>
+            <button type="submit" name="login" class="btn btn-secondary mb-3 col">Login</button>
         </div>
 
         <!-- Register buttons -->
@@ -85,28 +83,17 @@
         {{-- Login with google --}}
         <div class="container d-flex justify-content-center mt-2">
             <a href="{{ route('google.login') }}">
-            <div class="google-btn mb-2 col">
-                <div class="google-icon-wrapper">
-                    <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
-                </div>
-                <span class="btn-text" style="margin-left: 65px">
-                    <b>Login with google</b>
-                </span>
-            </div>
+
+                <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
             </a>
         </div>
 
         {{-- Login with facebook --}}
-        {{-- <div class="container d-flex justify-content-center">
+        <div class="container d-flex justify-content-center">
             <a href="{{ route('facebook.login') }}">
-            <div class="google-btn mb-2 col">
-                <div class="google-icon-wrapper">
-                    <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"/>
-                </div>
-                <span class="btn-text"><b>Login with facebook</b></span>
-            </div>
+                <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"/>
             </a>
-        </div> --}}
+        </div>
 
     </form>
 </div>

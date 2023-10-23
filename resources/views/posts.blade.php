@@ -2,6 +2,7 @@
 @extends('layouts.main')
 
 @section('container')
+<div class="p-3 p-lg-5 mb-4 rounded " style="background-color: aliceblue;">
     <h2 class="mb-4 text-center">{{ $title }}</h2>
 
     <div class="row justify-content-center">
@@ -31,7 +32,7 @@
             <a href="/post/{{ $posts[0]->slug }}">
 
             @if ($posts[0]->image)
-                <div style="max-height: 350px; overflow: hidden">
+                <div style="max-height: 350px; overflow: hidden;">
                     <img src="{{ asset('storage/' . $posts[0]->image) }}" class="img-fluid mt-3" alt="">
                 </div>
             @else
@@ -51,7 +52,7 @@
                     </small>
                 </p>
                 <p class="card-text text-center">{{ $posts[0]->excerpt }}</p>
-                <a href="/post/{{ $posts[0]->slug }}" class="btn btn-danger mt-3">Read more</a>
+                <a href="/post/{{ $posts[0]->slug }}" class="btn btn-secondary mt-3">Read more</a>
             </div>
         </div>
 
@@ -59,9 +60,11 @@
             <div class="row">
 
             @foreach ($posts->skip(1) as $post)
-                <div class="col-sm-6 col-lg-4 col-6 mb-3">
+                <div class="col-sm-6 col-lg-4 col-6 mb-3 p-1 p-lg-2">
                     <div class="card">
-                        <a href="/posts?category={{ $post->category->slug }}" class="position-absolute px-3 py-2 text-decoration-none text-white" style="background-color: rgba(0, 0, 0, 0.7)">{{ $post->category->name }}</a>
+                        <a href="/posts?category={{ $post->category->slug }}" class="position-absolute px-3 py-2 text-decoration-none text-white rounded" style="background-color: rgba(0, 0, 0, 0.7)">
+                            {{ $post->category->name }}
+                        </a>
 
                         @if ($post->image)
                             <div style="max-height: 310px; overflow: hidden">
@@ -82,13 +85,14 @@
                                 </small>
                             </p>
                             <p class="card-text">{{ Str::limit(strip_tags($post->body, 200)) }} </p>
-                            <a href="/post/{{ $post->slug }}" class="btn btn-danger mt-3">Read more</a>
+                            <a href="/post/{{ $post->slug }}" class="btn btn-secondary mt-3">Read more</a>
                         </div>
                     </div>
                 </div>
             @endforeach
             </div>
         </div>
+    </div>
 
     @else
         <p class="text-center fs-4">No Post Found.</p>

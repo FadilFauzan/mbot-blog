@@ -2,7 +2,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <h2 class="mb-4">Post Categories</h2>
+    <h2 class="mb-4 text-white">Post Categories</h2>
 
         <div class="container">
             <div class="row">

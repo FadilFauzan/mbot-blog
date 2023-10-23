@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PostController;
@@ -37,7 +38,7 @@ Route::get('/about', function () {
     return view('about', [
         'title' => 'About',
         'active' => 'about',
-        'name' => 'fadil ahmad fauzan'
+        'name' => 'Fadil Ahmad Fauzan'
     ]);
 })->name('about');
 
@@ -64,8 +65,8 @@ Route::get('/dashboard', function() {
 Route::get('/auth/google', [SocialAuthController::class, 'googleRedirect'])->name('google.login');
 Route::get('/auth/google/callback', [SocialAuthController::class, 'googleCallback'])->name('google.callback');
 // Facebook OAuth
-// Route::get('/auth/facebook', [SocialAuthController::class, 'facebookRedirect'])->name('facebook.login');
-// Route::get('/auth/facebook/callback', [SocialAuthController::class, 'facebookCallback']);
+Route::get('/auth/facebook', [SocialAuthController::class, 'facebookRedirect'])->name('facebook.login');
+Route::get('/auth/facebook/callback', [SocialAuthController::class, 'facebookCallback']);
 
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 
@@ -80,8 +81,9 @@ Route::post('/reset-password', [PasswordController::class, 'passwordVerify'])
     ->middleware('guest')->name('password.update');
 
 
-// resource controller untuk CRUD
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::resource('/dashboard/profile', DashboardProfileController::class)->middleware('auth');
+
 Route::get('dashboard/change-password', [PasswordController::class, 'changePassword'])
     ->middleware('auth');
 Route::post('dashboard/change-password', [PasswordController::class, 'processChangePassword'])
